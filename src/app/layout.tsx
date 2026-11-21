@@ -28,6 +28,16 @@ export const metadata: Metadata = {
     "NeuroAI",
     "The Gambia",
   ],
+  icons: {
+    icon: [
+      {
+        url: "/images/gann-logo.webp",
+        type: "image/webp",
+      },
+    ],
+    shortcut: "/images/gann-logo.webp",
+    apple: "/images/gann-logo.webp",
+  },
 };
 
 export default function RootLayout({
