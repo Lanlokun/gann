@@ -1,5 +1,6 @@
 
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Plus_Jakarta_Sans } from "next/font/google";
 
 import Navbar from "@/components/layout/Navbar";
@@ -48,8 +49,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={jakarta.className}>
-        <Navbar />
+        <Suspense fallback={<div className="h-20" />}>
+          <Navbar />
+        </Suspense>
+
         {children}
+
         <Footer />
       </body>
     </html>

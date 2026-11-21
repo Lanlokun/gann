@@ -11,6 +11,14 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+export function generateStaticParams() {
+  return newsArticles.map((article) => ({
+    slug: article.slug,
+  }));
+}
+
+
+
 export async function generateMetadata({
   params,
 }: Props): Promise<Metadata> {
@@ -22,12 +30,12 @@ export async function generateMetadata({
 
   if (!article) {
     return {
-      title: "Article Not Found | GANN",
+      title: "Article Not Found",
     };
   }
 
   return {
-    title: `${article.title} | GANN`,
+    title: article.title,
     description: article.excerpt,
   };
 }
